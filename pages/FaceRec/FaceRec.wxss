@@ -1,0 +1,11 @@
+/* pages/FaceRec/FaceRec.wxss */
+.btn{
+  width:100rpx;
+  height:100rpx;
+  font-size:20rpx;
+}
+
+.box image{
+  width: 100rpx;
+  height: 100rpx;
+}

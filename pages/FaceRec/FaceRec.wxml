@@ -1,0 +1,11 @@
+<!--pages/FaceRec/FaceRec.wxml-->
+<!--<text>pages/FaceRec/FaceRec.wxml</text>-->
+<h1>主页面</h1>
+<view>
+  <button class="btn" catchtap="upLoad">上传</button>
+  <view class='box'>
+    <block wx:for="{{src}}">
+      <image src='{{item}}'></image>
+    </block>
+  </view>
+</view>
