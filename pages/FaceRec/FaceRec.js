@@ -1,12 +1,12 @@
 // pages/FaceRec/FaceRec.js
-var arr=[];
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      files: []
+      src:null,
+      picPaths:[]
   },
 
   /**
@@ -64,23 +64,66 @@ Page({
   onShareAppMessage: function () {
 
   },
-  chooseImage: function (e) {
+  chooseImage: function () {
     var that = this;
+    wx.showActionSheet({
+        itemList:['从相册中选择','拍照'],
+        itemColor :"#00000",
+        success:function(res){
+            if(!res.cancel){
+              if(res.tapIndex==0){
+                that.chooseWxImage('album')
+              }
+              else if(res.tapIndex==1){
+                that.chooseWxImage('camera')
+              }
+            }
+        }
+    })   
+  },
+
+  chooseWxImage:function(type){
+    var that=this;
+    var imgsPaths=that.data.imgs;
     wx.chooseImage({
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+      count:1,
+      sizeType:['original','compressed'],
+      sourceType:[type],
+      success: function(res) {
         that.setData({
-          files: that.data.files.concat(res.tempFilePaths)
-        });
+          src:res.tempFilePaths
+        })
+        console.log(res.tempFilePaths[0]);
+        /*that.upImgs(res.tempFilePaths[0],0)*/
+      },
+    })
+  },
+
+  upImgs:function(imgurl,index){
+    var that=this;
+    wx.uploadFile({
+      url: '',
+      filePath: 'imgurl',
+      name: 'file',
+      header:{
+        'content-type':'multipart/form-data'
+      },
+      formData:null,
+      success:function(res){
+        console.log(res)
+        var data=JSON.parse(res.data)
+          that.data.picPaths.push(data['msg'])
+          that.setData({
+            picPaths:that.data.picPaths
+          })
+          console.log(that.data.picPaths)
       }
     })
   },
   previewImage: function (e) {
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: this.data.files // 需要预览的图片http链接列表
+      urls: this.data.src // 需要预览的图片http链接列表
     })
   }
 });

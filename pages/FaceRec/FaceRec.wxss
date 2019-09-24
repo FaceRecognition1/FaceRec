@@ -1,1 +1,13 @@
 /* pages/FaceRec/FaceRec.wxss */
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uploader{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+}

@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/FaceRec/FaceRec"
+    "pages/FaceRec/FaceRec",
+    "pages/index/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "人脸识别",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
