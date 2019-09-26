@@ -79,7 +79,7 @@ Page({
               }
             }
         }
-    })   
+    })
   },
 
   chooseWxImage:function(type){

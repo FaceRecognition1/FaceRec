@@ -6,7 +6,9 @@
         <image class="weui-uploader__img" src="{{src}}" mode="aspectFill" />
       </view>
     <view class="weui-uploader__input-box">
-      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      <view class="weui-uploader__input" bindtap="chooseImage"></view> 
     </view>
+     <text class="tip">请选择照片开始识别</text>
+     <view class="uploader_btn"><button class="weui-btn" type="primary">开始识别</button></view>
   </view>
 </view>
