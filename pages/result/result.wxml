@@ -1,0 +1,15 @@
+<!--pages/result/result.wxml-->
+
+<scroll-view scroll-y="true" style="height:750rpx" class="scroll_view_res">
+  <view class="title_res">
+    <text>识别结果</text>
+  </view>
+  <view wx:for="{{res}}" class="scroll_block_res">
+    <view class="view_img_res">
+      <image class="img_res" src="{{item.imgurl}}"></image>
+    </view>
+    <view class="view_detail_res">
+      <text class="detail_res">{{item.name}}</text>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,15 @@
+.scroll_view_res{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll_block_res{
+  display: flex;
+  flex-flow: row;
+}
+
+.title_res{
+  display: flex;
+  align-items: center;
+}

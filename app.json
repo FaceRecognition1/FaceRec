@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/result/result",
     "pages/FaceRec/FaceRec",
     "pages/index/index"
+   
   ],
   "window": {
     "backgroundTextStyle": "dark",
